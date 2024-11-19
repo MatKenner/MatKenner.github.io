@@ -1,10 +1,4 @@
 ## Introduction
-
-### A Big Thank You for Reviewing Our Project
-Certainly! Here's a heartfelt blog post that expresses gratitude to your viewers while giving a special shout-out to Steve for his collaboration:
-
----
-
 ### **A Heartfelt Thank You for Your Support on My Project**
 
 Hey everyone,  
