@@ -13,5 +13,5 @@ And to all of you who took the time to check out the project—whether you left 
 
 This is just the beginning, and I’m already thinking about the next steps. Stay tuned, and I can’t wait to see where this journey takes us.  
 
-Thanks again,  
+Be The Change,  
 Mat
