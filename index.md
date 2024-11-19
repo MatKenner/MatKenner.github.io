@@ -1,5 +1,1 @@
-Here you can say lots of fun things about your site.
-
-Maybe say a some things about yourself.
-
-Or maybe what you plan to blog about.
+Follow along with our progress as we build and develop a network appliance designed to use only open-source technologies. This network appliance will include a firewall, DNS filtering, VPN, XDR, SIEM, mobile device management, and more. This seemingly endless list of features will be packed into a single physical device that costs less than $400.
