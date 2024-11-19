@@ -1,6 +1,6 @@
 title: "Creating an All-In-One Network Appliance"
 author: "Mat Kenner"
-description: "Follow along with my progress as I build and develop a network appliance that will be designed using open-source software. This network appliance will include a firewall, DNS filtering, VPN, XDR, SIEM, mobile device management, and more. This seemingly endless list of features will be housed on a single physical device that costs less than $400." # This will show up in places like twitter, linkedin, etc, if you share your sites url as a post.
+description: "Follow along with our progress as we build and develop a network appliance that will be designed using open-source software. This network appliance will include a firewall, DNS filtering, VPN, XDR, SIEM, mobile device management, and more. This seemingly endless list of features will be housed on a single physical device that costs less than $400." # This will show up in places like twitter, linkedin, etc, if you share your sites url as a post.
 email: "matdkenner@gmail.com"
 twitter_username: "MatKenner"
 github_username: "MatKenner"
