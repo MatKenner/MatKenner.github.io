@@ -1,6 +1,15 @@
+/* Default styles (Light mode) */
+
+/* Light mode base styles */
+body {
+  background-color: #fff;
+  color: #333;
+}
+
 hr {
   margin-top: 30px;
   margin-bottom: 20px;
+  border-color: #ccc;
 }
 
 /* Post navigation links */
@@ -42,4 +51,76 @@ hr {
   transform: translateY(-50%);
   font-size: 2.5em;
   opacity: 0.3;
+}
+
+/* Dark mode styles using prefers-color-scheme */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #333;
+    color: #f0f0f0;
+  }
+
+  hr {
+    border-color: #555;
+  }
+
+  .post_navi {
+    background-color: #444;
+  }
+
+  .post_navi-label {
+    color: #bbb;
+  }
+
+  .post_navi .post_navi-item {
+    color: #f0f0f0;
+  }
+
+  .post_navi .post_navi-arrow {
+    color: #bbb;
+  }
+}
+
+/* Dark mode classes for manual toggle */
+body.dark-mode {
+  background-color: #333;
+  color: #f0f0f0;
+}
+
+body.dark-mode hr {
+  border-color: #555;
+}
+
+body.dark-mode .post_navi {
+  background-color: #444;
+}
+
+body.dark-mode .post_navi-label {
+  color: #bbb;
+}
+
+body.dark-mode .post_navi .post_navi-item {
+  color: #f0f0f0;
+}
+
+body.dark-mode .post_navi .post_navi-arrow {
+  color: #bbb;
+}
+
+/* Toggle button styles */
+#theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px;
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+#theme-toggle.dark-mode {
+  background-color: #333;
+  color: #f0f0f0;
 }
