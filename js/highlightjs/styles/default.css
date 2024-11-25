@@ -1,162 +1,64 @@
-/* Original highlight.js style (c) Ivan Sagalaev <maniac@softwaremaniacs.org> */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light/Dark Mode Toggle</title>
+    <link rel="stylesheet" href="default.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Website</h1>
+        <button id="theme-toggle">Switch to Dark Mode</button>
+    </header>
 
-.hljs {
-  display: block;
-  overflow-x: auto;
-  padding: 0.5em;
-  background: #D3D3D3; /* Light background */
-}
+    <main>
+        <p>This is an example page with light/dark mode toggle functionality.</p>
+    </main>
 
-/* Base color: saturation 0; */
+    <footer>
+        <p>&copy; 2024 My Website</p>
+    </footer>
 
-.hljs,
-.hljs-subst {
-  color: #444; /* Light text color */
-}
+    <script>
+        // Check localStorage for saved theme
+        const currentTheme = localStorage.getItem('theme');
+        const toggleButton = document.getElementById('theme-toggle');
+        
+        // Function to set the theme
+        function setTheme(theme) {
+            if (theme === 'dark') {
+                document.body.classList.add('dark-mode');
+                toggleButton.textContent = 'Switch to Light Mode';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.body.classList.remove('dark-mode');
+                toggleButton.textContent = 'Switch to Dark Mode';
+                localStorage.setItem('theme', 'light');
+            }
+        }
 
-.hljs-comment {
-  color: #888888; /* Light comment color */
-}
+        // Initialize the theme based on system preferences or saved setting
+        if (currentTheme === 'dark') {
+            setTheme('dark');
+        } else if (currentTheme === 'light') {
+            setTheme('light');
+        } else {
+            // Set the default theme based on system preference
+            const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            setTheme(systemPrefersDark ? 'dark' : 'light');
+        }
 
-.hljs-keyword,
-.hljs-attribute,
-.hljs-selector-tag,
-.hljs-meta-keyword,
-.hljs-doctag,
-.hljs-name {
-  font-weight: bold;
-}
+        // Toggle the theme when the button is clicked
+        toggleButton.addEventListener('click', () => {
+            const currentMode = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+            setTheme(currentMode === 'dark' ? 'light' : 'dark');
+        });
 
-/* User color: hue: 0 */
-
-.hljs-type,
-.hljs-string,
-.hljs-number,
-.hljs-selector-id,
-.hljs-selector-class,
-.hljs-quote,
-.hljs-template-tag,
-.hljs-deletion {
-  color: #880000; /* User color */
-}
-
-.hljs-title,
-.hljs-section {
-  color: #880000;
-  font-weight: bold;
-}
-
-.hljs-regexp,
-.hljs-symbol,
-.hljs-variable,
-.hljs-template-variable,
-.hljs-link,
-.hljs-selector-attr,
-.hljs-selector-pseudo {
-  color: #BC6060;
-}
-
-/* Language color: hue: 90; */
-
-.hljs-literal {
-  color: #78A960;
-}
-
-.hljs-built_in,
-.hljs-bullet,
-.hljs-code,
-.hljs-addition {
-  color: #397300;
-}
-
-/* Meta color: hue: 200 */
-
-.hljs-meta {
-  color: #1f7199;
-}
-
-.hljs-meta-string {
-  color: #4d99bf;
-}
-
-/* Misc effects */
-
-.hljs-emphasis {
-  font-style: italic;
-}
-
-.hljs-strong {
-  font-weight: bold;
-}
-
-/* Dark Mode Styles */
-@media (prefers-color-scheme: dark) {
-    /* Update background for dark mode */
-    .hljs {
-        background: #41424C; /* Dark background */
-    }
-
-    .hljs,
-    .hljs-subst {
-        color: #f1f1f1; /* Light text for dark mode */
-    }
-
-    .hljs-comment {
-        color: #aaaaaa; /* Lighter gray for comments in dark mode */
-    }
-
-    .hljs-type,
-    .hljs-string,
-    .hljs-number,
-    .hljs-selector-id,
-    .hljs-selector-class,
-    .hljs-quote,
-    .hljs-template-tag,
-    .hljs-deletion {
-        color: #ff6f61; /* Slightly lighter red for user colors */
-    }
-
-    .hljs-title,
-    .hljs-section {
-        color: #ff6f61;
-        font-weight: bold;
-    }
-
-    .hljs-regexp,
-    .hljs-symbol,
-    .hljs-variable,
-    .hljs-template-variable,
-    .hljs-link,
-    .hljs-selector-attr,
-    .hljs-selector-pseudo {
-        color: #e0b0b0;
-    }
-
-    .hljs-literal {
-        color: #a2d9a1;
-    }
-
-    .hljs-built_in,
-    .hljs-bullet,
-    .hljs-code,
-    .hljs-addition {
-        color: #77b300;
-    }
-
-    .hljs-meta {
-        color: #65a1b2;
-    }
-
-    .hljs-meta-string {
-        color: #82b3c5;
-    }
-
-    /* Adjust emphasis and strong text */
-    .hljs-emphasis {
-        font-style: italic;
-    }
-
-    .hljs-strong {
-        font-weight: bold;
-    }
-}
+        // Update theme when system preference changes
+        window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
+            setTheme(e.matches ? 'dark' : 'light');
+        });
+    </script>
+</body>
+</html>
