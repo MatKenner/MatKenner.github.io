@@ -1,26 +1,21 @@
-/*
-
-Original highlight.js style (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
-
-*/
+/* Original highlight.js style (c) Ivan Sagalaev <maniac@softwaremaniacs.org> */
 
 .hljs {
   display: block;
   overflow-x: auto;
   padding: 0.5em;
-  background: #D3D3D3;
+  background: #D3D3D3; /* Light background */
 }
-
 
 /* Base color: saturation 0; */
 
 .hljs,
 .hljs-subst {
-  color: #444;
+  color: #444; /* Light text color */
 }
 
 .hljs-comment {
-  color: #888888;
+  color: #888888; /* Light comment color */
 }
 
 .hljs-keyword,
@@ -32,7 +27,6 @@ Original highlight.js style (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
   font-weight: bold;
 }
 
-
 /* User color: hue: 0 */
 
 .hljs-type,
@@ -43,7 +37,7 @@ Original highlight.js style (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
 .hljs-quote,
 .hljs-template-tag,
 .hljs-deletion {
-  color: #880000;
+  color: #880000; /* User color */
 }
 
 .hljs-title,
@@ -62,7 +56,6 @@ Original highlight.js style (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
   color: #BC6060;
 }
 
-
 /* Language color: hue: 90; */
 
 .hljs-literal {
@@ -76,7 +69,6 @@ Original highlight.js style (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
   color: #397300;
 }
 
-
 /* Meta color: hue: 200 */
 
 .hljs-meta {
@@ -86,7 +78,6 @@ Original highlight.js style (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
 .hljs-meta-string {
   color: #4d99bf;
 }
-
 
 /* Misc effects */
 
@@ -98,19 +89,74 @@ Original highlight.js style (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
   font-weight: bold;
 }
 
-<script>
-    const theme = window.matchMedia("(prefers-color-scheme: dark)");
-
-    function setTheme() {
-        if (theme.matches) {
-            document.body.classList.add("dark-mode");
-            document.body.classList.remove("light-mode");
-        } else {
-            document.body.classList.add("light-mode");
-            document.body.classList.remove("dark-mode");
-        }
+/* Dark Mode Styles */
+@media (prefers-color-scheme: dark) {
+    /* Update background for dark mode */
+    .hljs {
+        background: #2c2c2c; /* Dark background */
     }
 
-    theme.addEventListener("change", setTheme);
-    setTheme(); // Initial call to set the theme based on current preference
-</script>
+    .hljs,
+    .hljs-subst {
+        color: #f1f1f1; /* Light text for dark mode */
+    }
+
+    .hljs-comment {
+        color: #aaaaaa; /* Lighter gray for comments in dark mode */
+    }
+
+    .hljs-type,
+    .hljs-string,
+    .hljs-number,
+    .hljs-selector-id,
+    .hljs-selector-class,
+    .hljs-quote,
+    .hljs-template-tag,
+    .hljs-deletion {
+        color: #ff6f61; /* Slightly lighter red for user colors */
+    }
+
+    .hljs-title,
+    .hljs-section {
+        color: #ff6f61;
+        font-weight: bold;
+    }
+
+    .hljs-regexp,
+    .hljs-symbol,
+    .hljs-variable,
+    .hljs-template-variable,
+    .hljs-link,
+    .hljs-selector-attr,
+    .hljs-selector-pseudo {
+        color: #e0b0b0;
+    }
+
+    .hljs-literal {
+        color: #a2d9a1;
+    }
+
+    .hljs-built_in,
+    .hljs-bullet,
+    .hljs-code,
+    .hljs-addition {
+        color: #77b300;
+    }
+
+    .hljs-meta {
+        color: #65a1b2;
+    }
+
+    .hljs-meta-string {
+        color: #82b3c5;
+    }
+
+    /* Adjust emphasis and strong text */
+    .hljs-emphasis {
+        font-style: italic;
+    }
+
+    .hljs-strong {
+        font-weight: bold;
+    }
+}
